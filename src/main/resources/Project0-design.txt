@@ -1,0 +1,13 @@
+- Customer has {id, name, username, password}, register, login, viewItem, makeOfferForItem, makePayment, viewPaymentBalance
+- Employee has {id, name, username, password, role, manager}, addItem, removeItem, acceptRejectOffer, viewPayments,
+- Manager (is an Employee) createEmployee, removeEmployee, viewSalesHistory
+- Item {id, name, status, date, price}
+- StatusValues = [added, offered, offer_rejected, offer_accepted, sold]  
+- Payment {id, itemId, customerId, date, amount, salePrice, balance = (salePrice - amount)}
+- WeeklyPayment = Select sum(amount) as "Weekly Payment" From Payment Group By date.week
+- Offer {id, customer.id, item.id, amount, date}
+- SalesHistory = {SELECT item.item_id, item.item_name, item.status, item.initial_price, item.date_added, 
+		payment.payment_id, payment.payment_amount, payment.payment_date, payment.balance
+		FROM item INNER JOIN payment ON item.item_id = payment.item_id}
+- System updateItemStatus, calculateWeeklyPayments
+

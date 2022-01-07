@@ -1,0 +1,149 @@
+-- Comment
+/*
+ * naming convention is snake_case
+ */
+--create database horizon;
+--create table item (
+--item_id serial primary key, 
+--item_name varchar(50), 
+--date_added date, 
+--initial_price decimal(10,2)
+--);
+--create table customer(
+--customer_id serial primary key, 
+--customer_name varchar(30), 
+--customer_username varchar(20), 
+--customer_password varchar(20)
+--);
+--create table employee(
+--emp_id serial primary key, 
+--emp_name varchar(50), 
+--emp_username varchar(20), 
+--emp_password varchar(20), 
+--manager integer references employee(emp_id)
+--);
+--create table payment(
+--payment_id serial primary key, 
+--item_id integer references item(item_id), 
+--customer_id integer references customer(customer_id), 
+--payment_date date, 
+--paid_amount decimal(10,2), 
+--sale_price decimal(10,2), 
+--balance decimal(10,2)
+--);
+--create table offer(
+--offer_id serial primary key, 
+--customer_id integer references customer(customer_id), 
+--item_id integer references item(item_id), 
+--offer_amount decimal(10,2), 
+--offer_date date
+--);
+
+--insert into employee (emp_name, emp_username, emp_password) values ('Karyl', 'kcunnane0', 'DUtB9Tt');
+--insert into employee (emp_name, emp_username, emp_password) values ('Valera', 'vkezar1', '4uHF6R');
+--insert into employee (emp_name, emp_username, emp_password) values ('Brendan', 'bshyre2', 'H32izGs');
+--insert into employee (emp_name, emp_username, emp_password) values ('Alfons', 'apedden3', '9mGocIzAife8');
+--insert into employee (emp_name, emp_username, emp_password) values ('Agatha', 'adubock4', 'Cc7n9YCRnY1f');
+--insert into employee (emp_name, emp_username, emp_password) values ('Philippine', 'paingell5', 'NOGdO57mmp');
+--insert into employee (emp_name, emp_username, emp_password) values ('Francisco', 'fcanada6', '72UBOBkdV');
+--insert into employee (emp_name, emp_username, emp_password) values ('Esdras', 'egiorgioni7', '2pYar8');
+--insert into employee (emp_name, emp_username, emp_password) values ('Debor', 'dmcgrale8', 'My9hxWg3WPO');
+--insert into employee (emp_name, emp_username, emp_password) values ('Betsey', 'brablin9', 'JfBN77p');
+
+--update employee set manager = 10 where emp_id <= 5;
+--update employee set manager = 5 where emp_id > 5;
+
+--alter table employee drop emp_role;
+--alter table item drop status;
+
+--alter table item add initial_price float;
+
+--insert into item (item_name, date_added, initial_price) values ('400SE', '3/24/2021', '8909.22');
+--insert into item (item_name, date_added, initial_price) values ('Range Rover Sport', '11/28/2020', '2240.17');
+--insert into item (item_name, date_added, initial_price) values ('Versa', '10/1/2021', '512.40');
+--insert into item (item_name, date_added, initial_price) values ('Touareg', '1/2/2021', '2512.98');
+--insert into item (item_name, date_added, initial_price) values ('Topaz', '7/8/2021', '5927.24');
+--insert into item (item_name, date_added, initial_price) values ('Silverado 3500', '10/26/2021', '2332.18');
+--insert into item (item_name, date_added, initial_price) values ('Focus', '10/5/2021', '2226.69');
+--insert into item (item_name, date_added, initial_price) values ('Q5', '10/3/2021', '4832.60');
+--insert into item (item_name, date_added, initial_price) values ('Savana 1500', '3/28/2021', '4466.71');
+--insert into item (item_name, date_added, initial_price) values ('ES', '7/9/2021', '2209.55');
+--insert into item (item_name, date_added, initial_price) values ('Durango', '9/9/2021', '8861.39');
+--insert into item (item_name, date_added, initial_price) values ('Express 1500', '5/12/2021', '6347.40');
+--insert into item (item_name, date_added, initial_price) values ('Silverado 2500', '11/29/2020', '6716.76');
+--insert into item (item_name, date_added, initial_price) values ('Cavalier', '5/15/2021', '7344.39');
+--insert into item (item_name, date_added, initial_price) values ('Sierra 1500', '5/4/2021', '538.06');
+--insert into item (item_name, date_added, initial_price) values ('Land Cruiser', '12/18/2020', '8856.64');
+--insert into item (item_name, date_added, initial_price) values ('Ram 3500', '3/1/2021', '2535.01');
+--insert into item (item_name, date_added, initial_price) values ('Yukon XL 2500', '7/14/2021', '2021.99');
+--insert into item (item_name, date_added, initial_price) values ('Sienna', '12/17/2020', '8472.38');
+--insert into item (item_name, date_added, initial_price) values ('LeSabre', '8/6/2021', '1968.04');
+--insert into item (item_name, date_added, initial_price) values ('Grand Voyager', '5/15/2021', '9569.86');
+--insert into item (item_name, date_added, initial_price) values ('Optima', '7/22/2021', '837.95');
+--insert into item (item_name, date_added, initial_price) values ('Legacy', '6/21/2021', '7396.99');
+--insert into item (item_name, date_added, initial_price) values ('Corsica', '4/16/2021', '7868.67');
+--insert into item (item_name, date_added, initial_price) values ('HHR Panel', '2/18/2021', '2126.53');
+--insert into item (item_name, date_added, initial_price) values ('Matrix', '5/7/2021', '5080.10');
+--insert into item (item_name, date_added, initial_price) values ('MKX', '11/12/2020', '6162.62');
+--insert into item (item_name, date_added, initial_price) values ('Santa Fe', '6/11/2021', '1333.54');
+--insert into item (item_name, date_added, initial_price) values ('Town & Country', '2/3/2021', '5201.83');
+--insert into item (item_name, date_added, initial_price) values ('Sierra 1500', '10/14/2021', '3467.85');
+--insert into item (item_name, date_added, initial_price) values ('I', '4/24/2021', '7064.36');
+--insert into item (item_name, date_added, initial_price) values ('Lancer', '4/27/2021', '4988.64');
+--insert into item (item_name, date_added, initial_price) values ('Continental Mark VII', '2/24/2021', '4148.17');
+--insert into item (item_name, date_added, initial_price) values ('900', '9/5/2021', '8139.38');
+--insert into item (item_name, date_added, initial_price) values ('Topaz', '11/8/2020', '2863.81');
+--insert into item (item_name, date_added, initial_price) values ('DBS', '11/27/2020', '6516.25');
+--insert into item (item_name, date_added, initial_price) values ('XJ Series', '3/13/2021', '663.08');
+--insert into item (item_name, date_added, initial_price) values ('Thunderbird', '11/15/2020', '5173.19');
+--insert into item (item_name, date_added, initial_price) values ('M', '3/5/2021', '2998.16');
+--insert into item (item_name, date_added, initial_price) values ('Breeze', '4/22/2021', '4157.37');
+--insert into item (item_name, date_added, initial_price) values ('LR3', '1/28/2021', '5631.37');
+--insert into item (item_name, date_added, initial_price) values ('IS', '4/7/2021', '5103.71');
+--insert into item (item_name, date_added, initial_price) values ('Savana 3500', '7/21/2021', '3735.83');
+--insert into item (item_name, date_added, initial_price) values ('VS Commodore', '9/17/2021', '6770.29');
+--insert into item (item_name, date_added, initial_price) values ('Sable', '2/26/2021', '3737.17');
+--insert into item (item_name, date_added, initial_price) values ('Bonneville', '3/26/2021', '7752.19');
+--insert into item (item_name, date_added, initial_price) values ('XK Series', '11/6/2020', '9515.24');
+--insert into item (item_name, date_added, initial_price) values ('D350', '12/20/2020', '670.31');
+--insert into item (item_name, date_added, initial_price) values ('90', '4/4/2021', '1792.99');
+--insert into item (item_name, date_added, initial_price) values ('Silverado 3500', '11/9/2020', '5188.60');
+--ALTER TABLE item
+--ALTER COLUMN initial_price TYPE decimal(7,2);
+--insert into item (item_name, date_added, initial_price) values ('car', ?, ?) returning item_id;
+--SELECT 
+--  extract(dow from date_added) AS "Day of week",
+--  to_char(date_added, 'Day') AS "Day Name" from item;
+--create table item_status(
+--status_id serial primary key,
+--item_id integer references item(item_id),
+--status varchar(20),
+--price decimal(10,2),
+--date_udated date
+--);
+--insert into item_status (item_id, status, price, date_updated) values(20,'sold', 34.45, CURRENT_TIMESTAMP);
+--insert into customer (customer_name, customer_username, customer_password) values ('Flossy McCumesky', 'fmccumesky0', 'TScpHwkec1');
+--insert into customer (customer_name, customer_username, customer_password) values ('Ray Sebastian', 'rsebastian1', 'nNPYXrEdI');
+--insert into customer (customer_name, customer_username, customer_password) values ('Emalia Demonge', 'edemonge2', 'CyTfuU');
+--insert into customer (customer_name, customer_username, customer_password) values ('Dulci Batalini', 'dbatalini3', '1cqc2Bat');
+--insert into customer (customer_name, customer_username, customer_password) values ('Emile Padell', 'epadell4', 'CQJ0yELWPCg');
+--insert into customer (customer_name, customer_username, customer_password) values ('Marsh Braybrookes', 'mbraybrookes5', 'IrYYOAuA');
+--insert into customer (customer_name, customer_username, customer_password) values ('Josh Fanthome', 'jfanthome6', 'BmI2Ou');
+--insert into customer (customer_name, customer_username, customer_password) values ('Whitney Dahmel', 'wdahmel7', 'RACwRCXHC');
+--insert into customer (customer_name, customer_username, customer_password) values ('Myrta Farrance', 'mfarrance8', 'E5hdBMlLhbA');
+--insert into customer (customer_name, customer_username, customer_password) values ('Aileen Davy', 'adavy9', 'M6W7M3');
+--update employee set emp_role = 'Manager' where emp_id in (5,10) returning emp_id;
+
+--alter table item_status add updated_by int references employee(emp_id);
+
+
+--Select item.item_name, item_status.status, payment.paid_amount
+--From item Inner Join item_status ON item.item_id = item_status.item_id
+--Inner Join payment ON item.item_id = payment.item_id;
+
+--Select item.item_name, item_status.status, payment.paid_amount--From item Inner Join item_status--ON item.item_id = item_status.item_id--Inner Join payment ON payment.item_id = item.item_id
+
+drop database project1;
+
+
+
